@@ -17,12 +17,12 @@ process.stdin.on("data", function(data) {
     if(answers.length < questions.length) {
         askQuestions(answers.length);
     } else {
-        process.exit(0);
+        process.exit();
     }
 });
 
-process.stdin.on("exit", function() {
-    process.stdout.write("end");
+process.on("exit", function() {
+    process.stdout.write("end\n");
 });
 
 askQuestions(0);
